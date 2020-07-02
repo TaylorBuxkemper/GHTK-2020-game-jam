@@ -1,3 +1,2 @@
 # weekly-game-jam-156
-July 3rd weekly game jam
-July 9th game jam finished
+weekly-game-jam-156 that runs from July 3rd till July 9th

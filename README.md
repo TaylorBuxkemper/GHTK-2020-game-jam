@@ -1,2 +1,2 @@
-# weekly-game-jam-156
-weekly-game-jam-156 that runs from July 3rd till July 9th
+# GHTK-2020-game-jam
+GHTK-2020-game-jam that runs from July 10th till July 12th

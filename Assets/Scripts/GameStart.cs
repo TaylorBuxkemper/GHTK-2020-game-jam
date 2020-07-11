@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GameStart : MonoBehaviour
 {
+    public int test;
+    public Texture rose;
+    
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(rose.name);
+        
         
     }
 

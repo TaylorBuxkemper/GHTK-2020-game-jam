@@ -1,23 +1,17 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class Rose : MonoBehaviour
 {    
     public float gameStartDelay = 2;
     public float startTransitionDuration = .5f;
+    public float targetTransitionHeight = 2f;
     
     // Start is called before the first frame update
     void Start()
     {
-        // wait 2 seconds
-        // show rose bud on screen
-        //
         StartCoroutine(StartGame());
     }
-
 
     private IEnumerator StartGame()
     {
@@ -27,12 +21,14 @@ public class Rose : MonoBehaviour
         while (elapsedTime < startTransitionDuration)
         {
             elapsedTime += Time.deltaTime;
-            transform.position = new Vector3(transform.position.x,elapsedTime,transform.position.z);
             
+            // TODO: use scale of canvas to move the image
+            float distanceToMoveUpThisFrame =
+                Mathf.Lerp(0, targetTransitionHeight, elapsedTime / startTransitionDuration);
+            transform.position = new Vector3(transform.position.x, distanceToMoveUpThisFrame, transform.position.z);
             yield return null;
         }
 
+        transform.position = new Vector3(transform.position.x, targetTransitionHeight, transform.position.z);
     }
-
-
 }

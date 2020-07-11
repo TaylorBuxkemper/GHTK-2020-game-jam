@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 639916870}
   - component: {fileID: 639916869}
   m_Layer: 0
-  m_Name: GameStart
+  m_Name: GameFlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartDelay: 2
-  startTransitionDuration: 30
+  startTransitionDuration: 2
+  targetTransitionHeight: 100
 --- !u!1 &1268445515
 GameObject:
   m_ObjectHideFlags: 0

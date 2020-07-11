@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Grass : MonoBehaviour
+[RequireComponent(typeof(Image))]
+public class Grass : MonoBehaviour, IPointerClickHandler
 {
     public float GrowthDelay = 5;
     public float GrowthDuration = 10f;
@@ -13,7 +16,9 @@ public class Grass : MonoBehaviour
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = .5f;
         StartCoroutine(StartGame());
+        
     }
 
     private IEnumerator StartGame()
@@ -34,5 +39,10 @@ public class Grass : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Clicked on grass");
     }
 }

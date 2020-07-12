@@ -11,16 +11,25 @@ public class GameFlow : MonoBehaviour {
     void Start()
     {
         Debug.Log(rose.name);
-        StartCoroutine(WaitForGameToStart());
-
-    }
-
-    private IEnumerator WaitForGameToStart() {
-        yield return new WaitForSeconds(startDelay);
         StartCoroutine(StartGame());
+
     }
 
     private IEnumerator StartGame() {
-        yield return new WaitForSeconds(5);
+        // start game with bud on a stem
+        
+        yield return new WaitForSeconds(startDelay);
+        // transition to pink peeking through bud
+        
+        yield return new WaitForSeconds(15);
+        // transition to bud peeling off rose flower
+
+        yield return new WaitForSeconds(25);
+        // transition to bud completely off 
+
+        yield return new WaitForSeconds(35);
+        // transition to rose flower poofed up
     }
+    
+    
 }

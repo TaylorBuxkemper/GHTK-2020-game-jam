@@ -6,7 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Rose : SingletonBehaviour<Rose>
 {
-    public float targetTransitionHeight = 125f;
     public bool isAlive = true;
     public List<Sprite> roseSprites;
     public List<float> targetHeights;
@@ -31,17 +30,18 @@ public class Rose : SingletonBehaviour<Rose>
         while (elapsedTime < transitionDuration) {
             elapsedTime += Time.deltaTime;
             float distanceToMoveUpThisFrame =
-                Mathf.Lerp(0, targetTransitionHeight, elapsedTime / transitionDuration);
+                Mathf.Lerp(0, targetHeights[0], elapsedTime / transitionDuration);
             transform.position = new Vector3(transform.position.x, distanceToMoveUpThisFrame * _canvasScale, transform.position.z);
             yield return null;
         }
-        transform.position = new Vector3(transform.position.x, targetTransitionHeight * _canvasScale, transform.position.z);
+        transform.position = new Vector3(transform.position.x, targetHeights[0] * _canvasScale, transform.position.z);
         yield return new WaitForSeconds(transitionDuration);
         StartCoroutine(StartGrowing());
     }
 
     public void TransitionToNextState(float transitionDuration) {
-        startingTransitionHeight = targetHeights[_currentGrowthStage];
+        Debug.Log("Current Growth Stage" + _currentGrowthStage);
+        startingTransitionHeight = targetHeights[_currentGrowthStage] * _canvasScale;
         _currentGrowthStage++;
         StartCoroutine(FadeInNewRose(transitionDuration));
     }
@@ -72,12 +72,17 @@ public class Rose : SingletonBehaviour<Rose>
     private IEnumerator StartGrowing() {
         float elapsedTime = 0;
         float transitionDuration = 5f;
+        int previousGrowthStage = 0;
         
         while (isAlive) {
             if (_currentGrowthStage >= targetHeights.Count) yield break;
 
+            if (previousGrowthStage != _currentGrowthStage) {
+                elapsedTime = 0;
+                previousGrowthStage = _currentGrowthStage;
+            }
             elapsedTime += Time.deltaTime;
-            var targetHeight = Mathf.Lerp(startingTransitionHeight, targetHeights[_currentGrowthStage],
+            var targetHeight = Mathf.Lerp(startingTransitionHeight, targetHeights[_currentGrowthStage] * _canvasScale,
                 elapsedTime / transitionDuration);
             transform.position = new Vector3(transform.position.x, targetHeight, transform.position.z);
             

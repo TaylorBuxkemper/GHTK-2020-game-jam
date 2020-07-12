@@ -2,9 +2,7 @@
 using UnityEngine;
 
 public class Rose : SingletonBehaviour<Rose>
-{    
-    public float gameStartDelay = 2;
-    public float startTransitionDuration = .5f;
+{
     public float targetTransitionHeight = 2f;
 
     public bool isAlive = true;
@@ -15,29 +13,29 @@ public class Rose : SingletonBehaviour<Rose>
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
-        StartCoroutine(StartOpeningSequence());
     }
-    private IEnumerator StartOpeningSequence()
-    {
-        yield return new WaitForSeconds(gameStartDelay);
+    
+    public IEnumerator StartOpeningSequence(float gameStartDelay) {
+        var transitionDuration = gameStartDelay / 3;
+        yield return new WaitForSeconds(transitionDuration);
         float elapsedTime = 0;
 
-        while (elapsedTime < startTransitionDuration)
+        while (elapsedTime < transitionDuration)
         {
             elapsedTime += Time.deltaTime;
             float distanceToMoveUpThisFrame =
-                Mathf.Lerp(0, targetTransitionHeight, elapsedTime / startTransitionDuration);
+                Mathf.Lerp(0, targetTransitionHeight, elapsedTime / transitionDuration);
             transform.position = new Vector3(transform.position.x, distanceToMoveUpThisFrame * _canvasScale, transform.position.z);
             yield return null;
         }
         transform.position = new Vector3(transform.position.x, targetTransitionHeight * _canvasScale, transform.position.z);
-        yield return new WaitForSeconds(gameStartDelay);
+        yield return new WaitForSeconds(transitionDuration);
         StartCoroutine(StartGame());
     }
 
     private IEnumerator StartGame()
     {
-        while (isAlive == true)
+        while (isAlive)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + .05f, transform.position.z);
             yield return null;

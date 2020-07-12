@@ -6,26 +6,21 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Grass : MonoBehaviour, IPointerClickHandler
 {
-    public float GrowthDelay = 5;
     public float GrowthDuration = 10f;
-    public float GrowthHeight = 1000f;
+    public float GrowthHeight = 2000f;
     
     private float _canvasScale = 1;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
         GetComponent<Image>().alphaHitTestMinimumThreshold = .5f;
         StartCoroutine(StartGame());
-        
     }
 
     private IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(GrowthDelay);
         float elapsedTime = 0;
-
         while (elapsedTime < GrowthDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -33,16 +28,14 @@ public class Grass : MonoBehaviour, IPointerClickHandler
             transform.position = new Vector3(transform.position.x, grassGrowthDistance * _canvasScale, transform.position.z);
             yield return null;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Rose.I.isAlive = false;
+        GameFlow.I.Stop();
     }
-
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Clicked on grass");
+        Destroy(gameObject);
     }
 }

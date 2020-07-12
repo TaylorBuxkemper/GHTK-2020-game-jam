@@ -13,10 +13,4 @@ public class GrassManager : SingletonBehaviour<GrassManager> {
         grass.transform.SetParent(transform);
         grass.transform.position = spawnPoint.transform.position;
     }
-
-    void Update()
-    {
-        SpawnGrass();
-        
-    }
 }

@@ -11,6 +11,8 @@ public class GrassManager : SingletonBehaviour<GrassManager> {
         var grass = Instantiate(grassPrefabs[Random.Range(0, grassPrefabs.Count-1)]);
         grass.transform.SetParent(transform);
         grass.transform.position = spawnPoint.transform.position;
+        //grass.transform.localScale = Vector3.one * GetComponentInParent<Canvas>().transform.localScale.y;
+        grass.transform.localScale = Vector3.one;
     }
 
 }

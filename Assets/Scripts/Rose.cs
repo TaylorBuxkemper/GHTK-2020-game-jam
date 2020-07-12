@@ -40,7 +40,6 @@ public class Rose : SingletonBehaviour<Rose>
     }
 
     public void TransitionToNextState(float transitionDuration) {
-        Debug.Log("Current Growth Stage" + _currentGrowthStage);
         startingTransitionHeight = targetHeights[_currentGrowthStage] * _canvasScale;
         _currentGrowthStage++;
         StartCoroutine(FadeInNewRose(transitionDuration));

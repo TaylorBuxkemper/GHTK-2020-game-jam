@@ -17,7 +17,5 @@ public class ScoreCounter : SingletonBehaviour<ScoreCounter> {
             yield return new WaitForSeconds(1);
             GetComponent<Text>().text = "Current Height " + ++score;
         }
-
-        highScore = score;
     }
 }

@@ -35,17 +35,17 @@ public class GameFlow : SingletonBehaviour<GameFlow> {
         // transition to pink peeking through bud
         Rose.I.TransitionToNextState(15);
         gameSpeed = 1f;
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
         
         // transition to bud peeling off rose flower
         Rose.I.TransitionToNextState(25);
         gameSpeed = .8f;
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(5);
 
         // transition to bud completely off
         Rose.I.TransitionToNextState(35);
         gameSpeed = .6f;
-        yield return new WaitForSeconds(35);
+        yield return new WaitForSeconds(5);
 
         // transition to rose flower poofed up
         Rose.I.TransitionToNextState(0);

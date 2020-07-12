@@ -1570,15 +1570,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints:
   - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
-  - {fileID: 1712139023}
+  - {fileID: 1583092155}
+  - {fileID: 77552302}
+  - {fileID: 542156741}
+  - {fileID: 1026881062}
+  - {fileID: 1751075595}
+  - {fileID: 501330664}
+  - {fileID: 1042467842}
   grassPrefabs:
   - {fileID: 8551376735026292832, guid: 8d761392e3804d443a3b60284429e15d, type: 3}
+  - {fileID: 8551376735026292832, guid: dffa23f49fe65a74cae0fd22f2c449eb, type: 3}
+  - {fileID: 8551376735026292832, guid: b333bab85cb775b42bf7308901c69a09, type: 3}
+  - {fileID: 8551376735026292832, guid: f79a383d34e86b34d858903e62836c06, type: 3}
+  - {fileID: 8551376735026292832, guid: 1541e11741155714eb239067a7d14934, type: 3}
 --- !u!1 &1882593816
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class Grass : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
-        GetComponent<Image>().alphaHitTestMinimumThreshold = .01f;
+        //GetComponent<Image>().alphaHitTestMinimumThreshold = .99f;
         StartCoroutine(StartGrowing());
     }
     
@@ -29,9 +29,8 @@ public class Grass : MonoBehaviour, IPointerClickHandler
             
             elapsedTime += Time.deltaTime;
 
-            var targetPosition = Mathf.Lerp(0, Rose.I.transform.position.y + 10, elapsedTime / growthDuration);
-            var newPos = (transform.position.y + growthSpeed / 10) * _canvasScale;
-            transform.position = new Vector3(transform.position.x, targetPosition * _canvasScale, transform.position.z);
+            var targetPosition = Mathf.Lerp(0, Rose.I.transform.position.y / _canvasScale + 10, elapsedTime / growthDuration);
+            transform.position = new Vector3(transform.position.x, targetPosition, transform.position.z);
             if (transform.position.y > Rose.I.transform.position.y) {
                 Rose.I.isAlive = false;
                 GameFlow.I.Stop();

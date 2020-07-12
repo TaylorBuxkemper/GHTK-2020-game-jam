@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3658433628431876757, guid: 9667567d585bf1e429ad80e8e8789eaa, type: 3}
+  m_Sprite: {fileID: -8037691623190948521, guid: 20ac72504421a60408acbc3127696838, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -88,6 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223f7cd5b4d356c409d2cb18465124a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrowthDelay: 5
-  GrowthDuration: 10
-  GrowthHeight: 1000
+  growthSpeed: 1

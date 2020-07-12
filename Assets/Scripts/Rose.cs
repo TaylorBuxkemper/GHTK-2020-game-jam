@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Rose : MonoBehaviour
+public class Rose : SingletonBehaviour<Rose>
 {    
     public float gameStartDelay = 2;
     public float startTransitionDuration = .5f;

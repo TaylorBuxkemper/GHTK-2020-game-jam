@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameFlow : MonoBehaviour
-{
+public class GameFlow : MonoBehaviour {
+    public float startDelay = 6f;
     public int test;
     public Texture rose;
     
@@ -11,13 +11,16 @@ public class GameFlow : MonoBehaviour
     void Start()
     {
         Debug.Log(rose.name);
-        
-        
+        StartCoroutine(WaitForGameToStart());
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private IEnumerator WaitForGameToStart() {
+        yield return new WaitForSeconds(startDelay);
+        StartCoroutine(StartGame());
+    }
+
+    private IEnumerator StartGame() {
+        yield return new WaitForSeconds(5);
     }
 }

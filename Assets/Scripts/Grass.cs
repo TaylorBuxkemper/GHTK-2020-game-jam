@@ -8,34 +8,31 @@ public class Grass : MonoBehaviour, IPointerClickHandler
 {
     public float GrowthDuration = 10f;
     public float GrowthHeight = 2000f;
+    public float growthSpeed = 1;
     
     private float _canvasScale = 1;
 
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
-        GetComponent<Image>().alphaHitTestMinimumThreshold = .01f;
-        StartCoroutine(StartGame());
+        GetComponent<Image>().alphaHitTestMinimumThreshold = .001f;
+        StartCoroutine(StartGrowing());
     }
-
-    private IEnumerator StartGame()
-    {
-        float elapsedTime = 0;
-        while (elapsedTime < GrowthDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float grassGrowthDistance = Mathf.Lerp(0, GrowthHeight, elapsedTime / GrowthDuration);
-            transform.position = new Vector3(transform.position.x, grassGrowthDistance * _canvasScale, transform.position.z);
+    
+    private IEnumerator StartGrowing() {
+        growthSpeed = GameFlow.I.gameSpeed;
+        while (Rose.I.isAlive) {
+            transform.position = new Vector3(transform.position.x, transform.position.y + growthSpeed / 10, transform.position.z);
+            if (transform.position.y > Rose.I.transform.position.y) {
+                Rose.I.isAlive = false;
+                GameFlow.I.Stop();
+            }
             yield return null;
         }
-
-        Rose.I.isAlive = false;
-        GameFlow.I.Stop();
     }
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked on grass");
         Destroy(gameObject);
     }
 }

@@ -1,7 +1,49 @@
 fileFormatVersion: 2
 guid: 5ee5464688e3fb943a570e8e97caecc7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2626880040877535266
+    second: Roses - No Leaves_0
+  - first:
+      213: 7129721585485443668
+    second: Roses - No Leaves_1
+  - first:
+      213: -7732984625501335867
+    second: Roses - No Leaves_2
+  - first:
+      213: -7693066430234745483
+    second: Roses - No Leaves_3
+  - first:
+      213: 7473822095588971991
+    second: Roses - No Leaves_4
+  - first:
+      213: -8836956910995616403
+    second: Roses - No Leaves_5
+  - first:
+      213: -532841885053925109
+    second: Roses - No Leaves_6
+  - first:
+      213: -262476310649239001
+    second: Roses - No Leaves_7
+  - first:
+      213: 3869278490659542920
+    second: Roses - No Leaves_8
+  - first:
+      213: 1343896528481126276
+    second: Roses - No Leaves_9
+  - first:
+      213: 1539532328360114701
+    second: Roses - No Leaves_10
+  - first:
+      213: 6037295190892088867
+    second: Roses - No Leaves_11
+  - first:
+      213: 8320960707166160629
+    second: Roses - No Leaves_12
+  - first:
+      213: 7547636419886348549
+    second: Roses - No Leaves_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +83,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,9 +115,126 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Roses - No Leaves_0
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 1692
+        width: 151
+        height: 742
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf4ee745827b8bd0800000000000000
+      internalID: -2626880040877535266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roses - No Leaves_1
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 1655
+        width: 257
+        height: 1074
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4527b42d10cd1f260800000000000000
+      internalID: 7129721585485443668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roses - No Leaves_3
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 1646
+        width: 360
+        height: 1187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575206067dcbc3590800000000000000
+      internalID: -7693066430234745483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roses - No Leaves_4
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 1644
+        width: 334
+        height: 1211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5db02199958b760800000000000000
+      internalID: 7473822095588971991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roses - No Leaves_7
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1700
+        width: 106
+        height: 473
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a0cc5af2f7b5cf0800000000000000
+      internalID: -262476310649239001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

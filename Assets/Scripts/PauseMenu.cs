@@ -17,19 +17,18 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
+        if (Input.GetKeyDown(KeyCode.P)) {
             ShowPauseMenu();
         }
     }
 
-    void ShowPauseMenu()
-    {
+    void ShowPauseMenu() {
+        Time.timeScale = 0f;
         _canvas.enabled = true;
     }
 
-    public void HidePauseMenu()
-    {
+    public void HidePauseMenu() {
+        Time.timeScale = 1f;
         _canvas.enabled = false;
     }
 }

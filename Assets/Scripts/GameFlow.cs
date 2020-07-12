@@ -17,9 +17,9 @@ public class GameFlow : SingletonBehaviour<GameFlow> {
     }
 
     public void Stop() {
-        StopCoroutine(_gameFlowRoutine);
-        StopCoroutine(_increaseDifficultyRoutine);
-        StopCoroutine(_spawnEnemiesRoutine);
+        if (_gameFlowRoutine != null) StopCoroutine(_gameFlowRoutine);
+        if (_increaseDifficultyRoutine != null) StopCoroutine(_increaseDifficultyRoutine);
+        if (_spawnEnemiesRoutine != null) StopCoroutine(_spawnEnemiesRoutine);
     }
     
     private IEnumerator StartGame() {

@@ -14,7 +14,7 @@ public class Grass : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         _canvasScale = GetComponentInParent<Canvas>().transform.localScale.x;
-        GetComponent<Image>().alphaHitTestMinimumThreshold = .5f;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = .01f;
         StartCoroutine(StartGame());
     }
 

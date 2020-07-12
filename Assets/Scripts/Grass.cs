@@ -8,7 +8,7 @@ public class Grass : MonoBehaviour, IPointerClickHandler
 {
     public float GrowthDelay = 5;
     public float GrowthDuration = 10f;
-    public float GrowthHeight = 100f;
+    public float GrowthHeight = 1000f;
     
     private float _canvasScale = 1;
     

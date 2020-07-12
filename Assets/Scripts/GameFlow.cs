@@ -13,7 +13,6 @@ public class GameFlow : MonoBehaviour {
     {
         Debug.Log(rose.name);
         StartCoroutine(StartGame());
-
     }
 
     private IEnumerator StartGame() {
@@ -34,6 +33,10 @@ public class GameFlow : MonoBehaviour {
         yield return new WaitForSeconds(35);
         StartLevel(4);
         // transition to rose flower poofed up
+    }
+
+    private IEnumerator UpdateDifficulty() {
+        yield return null;
     }
 
     private void StartLevel(int level) {

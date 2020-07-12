@@ -50,12 +50,14 @@ public class GameFlow : MonoBehaviour {
                 break;
             case 4:
                 StartCoroutine(ContinuouslyIncreaseGameSpeed());
+                break;
         }
     }
 
     private IEnumerator ContinuouslyIncreaseGameSpeed() {
         while (Rose.I.isAlive) {
             gameSpeed += .01f;
+            yield return null;
         }
     }
 }
